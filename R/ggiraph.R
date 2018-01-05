@@ -142,7 +142,7 @@ ggiraph <- function(code, ggobj = NULL,
   ggiwid.options$svgid = 1 + ggiwid.options$svgid
   options("ggiwid"=ggiwid.options)
 
-  data <- read_xml( path )
+  data <- read_xml( path , encoding="latin1")
   scr <- xml_find_all(data, "//*[@type='text/javascript']", ns = xml_ns(data) )
   js <- paste( sapply( scr, xml_text ), collapse = ";")
 
